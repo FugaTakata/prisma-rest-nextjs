@@ -1,5 +1,7 @@
 {
   "functions": {
-    "includeFiles": ["api/dev.db"]
+    "api/*": {
+      "includeFiles": "api/dev.db"
+    }
   }
 }
