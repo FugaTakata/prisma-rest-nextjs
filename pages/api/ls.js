@@ -10,6 +10,9 @@ export default async function handle(req, res) {
   const parentDbSs = exec("ls -a /var/task/.next/server/pages/api")
     .toString()
     .split("\n");
+  const parentDbSpages = exec("ls -a /var/task/.next/server/pages")
+    .toString()
+    .split("\n");
 
   res.json({
     dir: __dirname,
@@ -20,5 +23,6 @@ export default async function handle(req, res) {
     parentDb,
     parentDbS,
     parentDbSs,
+    parentDbSpages,
   });
 }
