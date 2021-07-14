@@ -14,6 +14,6 @@ export default async function handle(req, res) {
     grandParent: { dir: __dirname, grandParent },
     grandGrandParent: { dir: __dirname, grandGrandParent },
     parentDb: { dir: __dirname, parentDb },
-    // parentDbS: { dir: __dirname, parentDbS },
+    parentDbS: { dir: __dirname, parentDbS },
   });
 }
