@@ -1,6 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 import prisma from "../../lib/prisma";
+const a = require("./dev.db");
+const b = require("../../prisma/dev.db");
 
 export default async function handle(req, res) {
   const posts = process.env.NEXT_PUBLIC_DATABASE_URL;
@@ -18,6 +20,11 @@ export default async function handle(req, res) {
     console.log("/var/task/.next/server/pages/api/dev.dbある");
   } else {
     console.log("/var/task/.next/server/pages/api/dev.dbない");
+  }
+  if (fs.existsSync("/var/task/.next/server/pages/dev.db")) {
+    console.log("/var/task/.next/server/pages/dev.dbある");
+  } else {
+    console.log("/var/task/.next/server/pages/dev.dbない");
   }
 
   res.json({ posts, resultPosts, dir: __dirname });
