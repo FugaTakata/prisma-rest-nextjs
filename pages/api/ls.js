@@ -5,7 +5,8 @@ export default async function handle(req, res) {
   const parent = exec("ls ../").toString().split("\n");
   const grandParent = exec("ls ../../").toString().split("\n");
   const grandGrandParent = exec("ls ../../../").toString().split("\n");
-  const parentDb = exec("ls /var/task/").toString().split("\n");
+  const parentDb = exec("ls -a /var/task/").toString().split("\n");
+  const parentDbS = exec("tree -L 2 /var/task/").toString().split("\n");
 
   res.json({
     here: { dir: __dirname, here },
@@ -13,5 +14,6 @@ export default async function handle(req, res) {
     grandParent: { dir: __dirname, grandParent },
     grandGrandParent: { dir: __dirname, grandGrandParent },
     parentDb: { dir: __dirname, parentDb },
+    parentDbS: { dir: __dirname, parentDbS },
   });
 }
