@@ -1,13 +1,13 @@
-import Layout from '../components/Layout'
-import Post from '../components/Post'
+import Layout from "../components/Layout";
+import Post from "../components/Post";
 
-const Blog = props => {
+const Blog = (props) => {
   return (
     <Layout>
       <div className="page">
         <h1>My Blog</h1>
         <main>
-          {props.feed.map(post => (
+          {props.feed.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
             </div>
@@ -29,15 +29,15 @@ const Blog = props => {
         }
       `}</style>
     </Layout>
-  )
-}
+  );
+};
 
 export const getServerSideProps = async () => {
-  const res = await fetch('http://localhost:3000/api/feed')
-  const feed = await res.json()
+  const res = await fetch("https://prisma-rest-nextjs.vercel.app/api/feed");
+  const feed = await res.json();
   return {
     props: { feed },
-  }
-}
+  };
+};
 
-export default Blog
+export default Blog;
