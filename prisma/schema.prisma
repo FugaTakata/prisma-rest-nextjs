@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "/var/task/.next/server/pages/api/_files/dev.db"
+  url      = "file:/var/task/.next/server/pages/api/_files/dev.db"
 }
 
 model User {
