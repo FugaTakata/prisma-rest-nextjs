@@ -1,7 +1,7 @@
 {
   "functions": {
-    "api/*": {
-      "includeFiles": "api/dev.db"
+    "src/api/*": {
+      "includeFiles": "prisma/dev.db"
     }
   }
 }
