@@ -16,13 +16,8 @@ export default async function handle(req, res) {
   const parentDbSpages = exec("ls -a /var/task/.next/server/pages")
     .toString()
     .split("\n");
-  const DB = "public/db";
 
-  // const dir = path.resolve("./public", DB);
-
-  const fileNames = fs.readFileSync(path.join(__dirname, DB));
-
-  const db = fileNames.map((name) => path.join("/", dir, name));
+  const db = fs.readFileSync("db");
 
   res.json({
     dir: __dirname,
