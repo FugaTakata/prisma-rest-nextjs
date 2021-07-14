@@ -16,6 +16,7 @@ export default async function handle(req, res) {
   const parentDbSpages = exec("ls -a /var/task/.next/server/pages")
     .toString()
     .split("\n");
+  // const tree = exec("tree").toString();
 
   res.json({
     dir: __dirname,
@@ -27,6 +28,6 @@ export default async function handle(req, res) {
     parentDbS,
     parentDbSs,
     parentDbSpages,
-    db,
+    // tree,
   });
 }
