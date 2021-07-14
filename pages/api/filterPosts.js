@@ -5,6 +5,5 @@ const path = require("path");
 export default async function handle(req, res) {
   const { searchString } = req.query;
   const resultPosts = path.resolve("../../prisma/dev.db");
-  console.log(resultPosts);
   res.json(resultPosts);
 }
