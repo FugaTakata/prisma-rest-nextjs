@@ -1,8 +1,6 @@
 const path = require("path");
 const fs = require("fs");
 import prisma from "../../lib/prisma";
-const a = require("./dev.db");
-const b = require("../../prisma/dev.db");
 
 export default async function handle(req, res) {
   const posts = process.env.NEXT_PUBLIC_DATABASE_URL;
