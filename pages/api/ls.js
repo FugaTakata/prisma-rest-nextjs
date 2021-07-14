@@ -17,8 +17,6 @@ export default async function handle(req, res) {
     .toString()
     .split("\n");
 
-  const db = fs.readFileSync("db");
-
   res.json({
     dir: __dirname,
     here,
