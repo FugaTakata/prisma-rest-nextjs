@@ -16,7 +16,7 @@ export default async function handle(req, res) {
   const parentDbSpages = exec("ls -a /var/task/.next/server/pages")
     .toString()
     .split("\n");
-  const tree = exec("pwd;find ../../../ | sort").toString();
+  const tree = exec("pwd;find . | sort").toString();
 
   res.json({
     // dir: __dirname,
