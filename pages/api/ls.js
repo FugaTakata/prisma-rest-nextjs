@@ -1,4 +1,4 @@
-import path from "path";
+const path = require("path");
 
 const exec = require("child_process").execSync;
 const fs = require("fs");
