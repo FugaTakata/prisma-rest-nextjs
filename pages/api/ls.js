@@ -1,4 +1,7 @@
+import path from "path";
+
 const exec = require("child_process").execSync;
+const fs = require("fs");
 
 export default async function handle(req, res) {
   const here = exec("ls ./").toString().split("\n");
@@ -13,6 +16,13 @@ export default async function handle(req, res) {
   const parentDbSpages = exec("ls -a /var/task/.next/server/pages")
     .toString()
     .split("\n");
+  const DB = "db";
+
+  const dir = path.resolve("./public", DB);
+
+  const fileNames = fs.readFileSync(dir);
+
+  const db = fileNames.map((name) => path.join("/", dir, name));
 
   res.json({
     dir: __dirname,
@@ -24,5 +34,6 @@ export default async function handle(req, res) {
     parentDbS,
     parentDbSs,
     parentDbSpages,
+    db,
   });
 }
