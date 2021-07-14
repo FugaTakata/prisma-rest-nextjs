@@ -25,5 +25,7 @@ export default async function handle(req, res) {
     console.log("/var/task/.next/server/pages/dev.dbない");
   }
 
+  console.log(fs.readFileSync("./a.json"));
+
   res.json({ posts, resultPosts, dir: __dirname });
 }
