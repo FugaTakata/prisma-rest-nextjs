@@ -5,11 +5,13 @@ export default async function handle(req, res) {
   const parent = exec("ls ../").toString().split("\n");
   const grandParent = exec("ls ../../").toString().split("\n");
   const grandGrandParent = exec("ls ../../../").toString().split("\n");
+  const parentDb = exec("ls ../db").toString().split("\n");
 
   res.json({
     here: { dir: __dirname, here },
     parent: { dir: __dirname, parent },
-    grandParent: { dir: __dirname, grandParentg },
+    grandParent: { dir: __dirname, grandParent },
     grandGrandParent: { dir: __dirname, grandGrandParent },
+    parentDb: { dir: __dirname, parentDb },
   });
 }
