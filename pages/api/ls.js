@@ -16,18 +16,18 @@ export default async function handle(req, res) {
   const parentDbSpages = exec("ls -a /var/task/.next/server/pages")
     .toString()
     .split("\n");
-  const tree = exec("pwd;find . | sort | sed").toString();
+  const tree = exec("pwd;find ../../../ | sort").toString();
 
   res.json({
-    dir: __dirname,
-    here,
-    parent,
-    grandParent,
-    grandGrandParent,
-    parentDb,
-    parentDbS,
-    parentDbSs,
-    parentDbSpages,
+    // dir: __dirname,
+    // here,
+    // parent,
+    // grandParent,
+    // grandGrandParent,
+    // parentDb,
+    // parentDbS,
+    // parentDbSs,
+    // parentDbSpages,
     tree,
   });
 }
