@@ -5,9 +5,7 @@ export default async function handle(req, res) {
   const parent = exec("ls ../").toString().split("\n");
   const grandParent = exec("ls ../../").toString().split("\n");
   const grandGrandParent = exec("ls ../../../").toString().split("\n");
-  const parentDb = exec("ls /var/task/.next/server/pages/api")
-    .toString()
-    .split("\n");
+  const parentDb = exec("ls /var/task/").toString().split("\n");
 
   res.json({
     here: { dir: __dirname, here },
