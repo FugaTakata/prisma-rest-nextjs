@@ -23,6 +23,7 @@ export default async function handle(req, res) {
   });
 }
 
+// /var/task/.next/server/chunks/dev.db
 const a = {
   pwd: ["/var/task", ""],
   "ls -la ./": [
