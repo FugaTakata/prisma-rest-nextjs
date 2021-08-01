@@ -1,13 +1,7 @@
 {
   "functions": {
-    "pages/api/feed.js": {
-      "includeFiles": "pages/api/_files/**"
-    },
-    "pages/api/a.js": {
-      "includeFiles": "prisma/dev.db"
-    },
-    "pages/api/ls.js": {
-      "includeFiles": "public/dev.db"
+    "pages/**/*": {
+      "includeFiles": "prisma/*"
     }
   }
 }
