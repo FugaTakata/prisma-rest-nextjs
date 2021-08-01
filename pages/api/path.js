@@ -5,18 +5,17 @@ const exec = require("child_process").execSync;
 const { serverRuntimeConfig } = getConfig();
 
 export default async function handle(req, res) {
-  const dbPath = path.join(
-    serverRuntimeConfig.PROJECT_ROOT,
-    "../../prisma/dev.db"
-  );
+  const basePath = process.cwd();
+  const basePathJoined = path.join(process.cwd(), ".next/server/chunks");
+  const filePath = path.join(basePath, "dev.db");
+  const filePathJoined = path.join(basePathJoined, "dev.db");
 
   const a = {
-    "ls -l /usr": exec(`ls -l /usr`).toString().split("\n"),
-    // "ls -al dbPath": exec(`ls -al ${dbPath}`).toString().split("\n"),
-    // "ls -al /prisma": exec("ls -al /prisma").toString().split("\n"),
+    basePath,
+    basePathJoined,
+    filePath,
+    filePathJoined,
   };
 
-  res.json({
-    f: a,
-  });
+  res.json(a);
 }
