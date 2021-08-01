@@ -4,20 +4,8 @@ const exec = require("child_process").execSync;
 const fs = require("fs");
 
 export default async function handle(req, res) {
-  const here = exec("ls ./").toString().split("\n");
-  const parent = exec("ls ../").toString().split("\n");
-  const grandParent = exec("ls ../../").toString().split("\n");
-  const grandGrandParent = exec("ls ../../../").toString().split("\n");
-  const parentDb = exec("ls -a /var/task/").toString().split("\n");
-  const parentDbS = exec("ls -a /var").toString().split("\n");
-  const parentDbSs = exec("ls -a /var/task/.next/server/pages/api")
-    .toString()
-    .split("\n");
-  const parentDbSpages = exec("ls -a /var/task/.next/server/pages")
-    .toString()
-    .split("\n");
-
   res.json({
+    pwd: exec("pwd").toString().split("\n"),
     "ls -l ./": exec("ls ./").toString().split("\n"),
     "ls -l ../": exec("ls ../").toString().split("\n"),
     "ls -l ../../": exec("ls ../../").toString().split("\n"),
