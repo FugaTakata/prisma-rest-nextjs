@@ -11,8 +11,9 @@ module.exports = {
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.plugins.push(
       new CopyPlugin({
-        patterns: ["prisma/"],
+        patterns: ["prisma/dev.db"],
       })
     );
+    return config;
   },
 };
