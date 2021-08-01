@@ -11,7 +11,7 @@ export default async function handle(req, res) {
   );
 
   const a = {
-    'find ./ -name "*.txt" -type f': exec(`find ../../../ -name "*.db" -type f`)
+    'grep . -rl * | grep "*.db"': exec(`grep . -rl * | grep "*.db"`)
       .toString()
       .split("\n"),
     // "ls -al dbPath": exec(`ls -al ${dbPath}`).toString().split("\n"),
