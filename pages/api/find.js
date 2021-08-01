@@ -11,10 +11,14 @@ export default async function handle(req, res) {
   );
 
   const a = {
-    "ls -al /": exec(`ls -al /`).toString().split("\n"),
+    'find ./ -name "*.txt" -type f': exec(`find ../../../ -name "*.db" -type f`)
+      .toString()
+      .split("\n"),
     // "ls -al dbPath": exec(`ls -al ${dbPath}`).toString().split("\n"),
     // "ls -al /prisma": exec("ls -al /prisma").toString().split("\n"),
   };
+
+  console.log(a);
 
   res.json({
     f: a,
