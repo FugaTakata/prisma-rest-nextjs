@@ -11,8 +11,9 @@ export default async function handle(req, res) {
   );
 
   const a = {
-    "ls -al /prisma": exec("ls -al /prisma").toString().split("\n"),
+    "ls -al /": exec(`ls -al /`).toString().split("\n"),
     "ls -al dbPath": exec(`ls -al ${dbPath}`).toString().split("\n"),
+    // "ls -al /prisma": exec("ls -al /prisma").toString().split("\n"),
   };
 
   res.json({
