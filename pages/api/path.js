@@ -6,7 +6,7 @@ const { serverRuntimeConfig } = getConfig();
 export default async function handle(req, res) {
   const dbPath = path.join(
     serverRuntimeConfig.PROJECT_ROOT,
-    "./path/to/file.json"
+    "../../prisma/dev.db"
   );
 
   res.json({
