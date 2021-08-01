@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import getConfig from "next/config";
+const exec = require("child_process").execSync;
 const { serverRuntimeConfig } = getConfig();
 
 export default async function handle(req, res) {
@@ -9,7 +10,12 @@ export default async function handle(req, res) {
     "../../prisma/dev.db"
   );
 
+  const a = {
+    "ls -al /prisma": exec("ls -al /prisma").toString().split("\n"),
+    "ls -al dbPath": exec(`ls -al ${dbPath}`).toString().split("\n"),
+  };
+
   res.json({
-    dbPath,
+    f: a,
   });
 }
